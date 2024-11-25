@@ -23,19 +23,45 @@ alias lta3="eza -lTag --level=3 --icons"
 # Quick Navigation with Zoxide
 alias ..='z ..'
 alias ...='z ../..'
+alias ....='z ../../..'
+alias .....='z ../../../..'
+alias ......='z ../../../../..'
 alias cd="z" # Leverage zoxide for directory navigation
 
 # File Search and Open
-alias search='fzf'
-#alias fz="fzf --preview='bat {}'" # Fuzzy finder with preview
-alias fzn="nvim $(fzf --preview='bat --color=always {}')" # Open files via fzf and nvim
+alias fz="fzf --preview='bat {}'" # Fuzzy finder with preview
+
+# Function to open files via fzf and nvim
+fzn() {
+  local file
+  file=$(fzf --preview='bat --color=always {}') || return
+  [ -n "$file" ] && nvim "$file"
+}
 
 # Git and LazyGit
+alias gc="git commit -m"
+alias gca="git commit -a -m"
+alias gp="git push origin HEAD"
+alias gpu="git pull origin"
 alias gst="git status"
-alias gci="git commit"
-alias gp="git push"
-alias gfa="git fetch --all"
+alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
+alias gdiff="git diff"
+alias gco="git checkout"
+alias gb='git branch'
+alias gba='git branch -a'
+alias gadd='git add'
+alias ga='git add -p'
+alias gcoall='git checkout -- .'
+alias gr='git remote'
+alias gre='git reset'
 alias lg="lazygit"
+
+# Docker
+alias dco="docker compose"
+alias dps="docker ps"
+alias dpa="docker ps -a"
+alias dl="docker ps -l -q"
+alias dx="docker exec -it"
 
 # Zoxide + FZF Integration
 alias zf="zoxide query -l | fzf --preview 'tree {}'" # Fuzzy finder for directory navigation
@@ -48,6 +74,17 @@ alias rm="rm -i" # Confirm before deleting files
 
 # Reload Zsh Configuration
 alias reload="source ~/.zshrc" # Quick reload of Zsh config
+
+#Clear
+alias cl="clear"
+
+#Vim
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
+
+#Npm
+alias npm="pnpm"
 
 # -----------------
 # Prompt Configuration (Starship)
