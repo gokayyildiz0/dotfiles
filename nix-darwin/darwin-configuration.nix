@@ -18,6 +18,9 @@
 security.pam.enableSudoTouchIdAuth = true;
   # User-specific settings
   users.users.gokayyildiz.home = "/Users/gokayyildiz/";
+  home-manager.backupFileExtension = "backup";
+  nix.configureBuildUsers = true;
+  nix.useDaemon = true;
 
   # Configure Homebrew
   homebrew.enable = true;
