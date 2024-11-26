@@ -15,7 +15,7 @@
   # Zsh and other basic programs
   programs.zsh.enable = true;
   system.stateVersion = 5; # Use an integer for state version
-
+security.pam.enableSudoTouchIdAuth = true;
   # User-specific settings
   users.users.gokayyildiz.home = "/Users/gokayyildiz/";
 
@@ -35,7 +35,7 @@
     dock.mru-spaces = false;
     finder.AppleShowAllExtensions = true;
     finder.FXPreferredViewStyle = "clmv";
-    loginwindow.LoginwindowText = "Gökay Yıldız";
+    loginwindow.LoginwindowText = "Hondlabs";
     screencapture.location = "~/Documents/Workspace/Assets/Screenshots";
     screensaver.askForPasswordDelay = 10;
   };
