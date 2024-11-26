@@ -11,55 +11,11 @@
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
-  let
-    configuration = { pkgs, ... }: {
-      # List packages installed in system profile. To search by name, run:
-      # $ nix-env -qaP | grep wget
-      environment.systemPackages =
-        [ 
- 
-     
-        ];
-      services.nix-daemon.enable = true;
-      nix.settings.experimental-features = "nix-command flakes";
-      programs.zsh.enable = true;  # default shell on catalina
-      system.configurationRevision = self.rev or self.dirtyRev or null;
-      system.stateVersion = 5;
-      nixpkgs.hostPlatform = "aarch64-darwin";
-      security.pam.enableSudoTouchIdAuth = true;
-
-      users.users.gokayyildiz.home = "/Users/gokayyildiz";
-      home-manager.backupFileExtension = "backup";
-      nix.configureBuildUsers = true;
-      nix.useDaemon = true;
-
-      system.defaults = {
-        dock.autohide = true;
-        dock.mru-spaces = false;
-        finder.AppleShowAllExtensions = true;
-        finder.FXPreferredViewStyle = "clmv";
-        loginwindow.LoginwindowText = "HondLabs";
-        screencapture.location = "~/Pictures/screenshots";
-        screensaver.askForPasswordDelay = 10;
-      };
-
-      # Homebrew needs to be installed on its own!
-      homebrew.enable = true;
-      homebrew.casks = [
-        "font-meslo-lg-nerd-font"
-        "wezterm"
-      ];
-      homebrew.brews = [
-        "neovim"
-      ];
-    };
-  in
-  {
+  outputs = { self, nixpkgs, nix-darwin, home-manager }: {
     darwinConfigurations."Gokay's-Mac" = nix-darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
-      modules = [ 
-	configuration
+      system = "aarch64-darwin"; # Architecture for Apple Silicon
+      modules = [
+        ./darwin-configuration.nix # System-level configuration
         home-manager.darwinModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
@@ -68,7 +24,9 @@
       ];
     };
 
-    # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."Gokay's-Mac".pkgs;
+    homeConfigurations."Gokay's-Mac" = {
+      pkgs = nixpkgs.legacyPackages.aarch64-darwin; # Define the package set
+      modules = [ ./home.nix ]; # Specify the Home Manager modules
+    };
   };
 }
