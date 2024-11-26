@@ -9,16 +9,18 @@
   home.packages = [];
 
   # Manage dotfiles through Home Manager
-      home.file = {
-            ".zshrc".source = "${self}/dotfiles/zshrc/.zshrc";
-            ".config/wezterm".source = "${self}/dotfiles/wezterm";
-            ".config/starship".source = "${self}/dotfiles/starship";
-            ".config/zellij".source = "${self}/dotfiles/zellij";
-            ".config/nvim".source = "${self}/dotfiles/nvim";
-            ".config/nix".source = "${self}/dotfiles/nix";
-            ".config/nix-darwin".source = "${self}/dotfiles/nix-darwin";
-            ".config/tmux".source = "${self}/dotfiles/tmux";
-          };
+   
+  home.file = {
+    ".zshrc".source = "${flakePath}/dotfiles/zshrc/.zshrc";
+    ".config/wezterm".source = "${flakePath}/dotfiles/wezterm";
+    ".config/starship".source = "${flakePath}/dotfiles/starship";
+    ".config/zellij".source = "${flakePath}/dotfiles/zellij";
+    ".config/nvim".source = "${flakePath}/dotfiles/nvim";
+    ".config/nix".source = "${flakePath}/dotfiles/nix";
+    ".config/nix-darwin".source = "${flakePath}/dotfiles/nix-darwin";
+    ".config/tmux".source = "${flakePath}/dotfiles/tmux";
+  };
+
   # Add custom session variables
   home.sessionVariables = { };
 
