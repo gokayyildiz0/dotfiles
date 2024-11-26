@@ -11,14 +11,14 @@ in
   home.stateVersion = "23.05";
 
   home.file = {
-    ".zshrc".source = "${dotfiles}/zshrc/.zshrc";
-    ".config/wezterm".source = "${dotfiles}/wezterm";
-    ".config/starship".source = "${dotfiles}/starship";
-    ".config/zellij".source = "${dotfiles}/zellij";
-    ".config/nvim".source = "${dotfiles}/nvim";
-    ".config/nix".source = "${dotfiles}/nix";
-    ".config/nix-darwin".source = "${dotfiles}/nix-darwin";
-    ".config/tmux".source = "${dotfiles}/tmux";
+    ".zshrc".source = "${HOME}/dotfiles/zshrc/.zshrc";
+    ".config/wezterm".source = "${HOME}/dotfiles/wezterm";
+    ".config/starship".source = "${HOME}/dotfiles/starship";
+    ".config/zellij".source = "${HOME}/dotfiles/zellij";
+    ".config/nvim".source = "${HOME}/dotfiles/nvim";
+    ".config/nix".source = "${HOME}/dotfiles/nix";
+    ".config/nix-darwin".source = "${HOME}/dotfiles/nix-darwin";
+    ".config/tmux".source = "${HOME}/dotfiles/tmux";
   };
 
   home.sessionVariables = { };
