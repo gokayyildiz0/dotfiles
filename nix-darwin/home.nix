@@ -4,6 +4,7 @@
   home.username = "gokayyildiz";
   home.homeDirectory = "/Users/gokayyildiz/";
   home.stateVersion = "23.05";
+  
 
   # Specify session variables
   home.sessionVariables = { };
