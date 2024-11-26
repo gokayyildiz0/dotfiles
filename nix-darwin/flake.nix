@@ -19,7 +19,7 @@
         inputs.home-manager.darwinModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.gokayyildiz = import ./home.nix { flakePath = self; };
+          home-manager.users.gokayyildiz = import ./home.nix;
         }
       ];
     };
