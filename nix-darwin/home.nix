@@ -9,17 +9,16 @@
   home.packages = [];
 
   # Manage dotfiles through Home Manager
-  home.file = {
-    ".zshrc".source = ./dotfiles/zshrc/.zshrc;                 # Relative path to the .zshrc file
-    ".config/wezterm".source = ./dotfiles/wezterm;             # Relative path to the wezterm config
-    ".config/starship".source = ./dotfiles/starship;           # Relative path to the starship config
-    ".config/zellij".source = ./dotfiles/zellij;               # Relative path to the zellij config
-    ".config/nvim".source = ./dotfiles/nvim;                   # Relative path to the Neovim config
-    ".config/nix".source = ./dotfiles/nix;                     # Relative path to the Nix config
-    ".config/nix-darwin".source = ./dotfiles/nix-darwin;       # Relative path to nix-darwin config
-    ".config/tmux".source = ./dotfiles/tmux;                   # Relative path to tmux config
-  };
-
+      home.file = {
+            ".zshrc".source = "${self}/dotfiles/zshrc/.zshrc";
+            ".config/wezterm".source = "${self}/dotfiles/wezterm";
+            ".config/starship".source = "${self}/dotfiles/starship";
+            ".config/zellij".source = "${self}/dotfiles/zellij";
+            ".config/nvim".source = "${self}/dotfiles/nvim";
+            ".config/nix".source = "${self}/dotfiles/nix";
+            ".config/nix-darwin".source = "${self}/dotfiles/nix-darwin";
+            ".config/tmux".source = "${self}/dotfiles/tmux";
+          };
   # Add custom session variables
   home.sessionVariables = { };
 
