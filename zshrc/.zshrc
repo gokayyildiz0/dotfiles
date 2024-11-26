@@ -63,8 +63,8 @@ alias dpa="docker ps -a"
 alias dl="docker ps -l -q"
 alias dx="docker exec -it"
 
-# Zoxide + FZF Integration
-alias zf="zoxide query -l | fzf --preview 'tree {}'" # Fuzzy finder for directory navigation
+# Zoxide + FZF Integration 
+alias zf="zoxide query -l | fzf --preview 'tree {}'" # Fuzzy finder for directory navigation 
 
 # Network Scanning
 alias nm="nmap -sC -sV -oN nmap" # Nmap with common scan flags
@@ -135,6 +135,10 @@ if type fzf &>/dev/null; then
   --header 'CTRL-/: Toggle preview window position'
   "
 fi
+
+# Nix!
+export NIX_CONF_DIR=$HOME/.config/nix
+export PATH=/run/current-system/sw/bin:$PATH
 
 # -----------------
 # History Settings
