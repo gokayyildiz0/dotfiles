@@ -10,15 +10,16 @@ in
   home.homeDirectory = "/Users/gokayyildiz/";
   home.stateVersion = "23.05";
 
+  # Home Manager configuration for dotfiles
   home.file = {
-    ".zshrc".source = "${HOME}/dotfiles/zshrc/.zshrc";
-    ".config/wezterm".source = "${HOME}/dotfiles/wezterm";
-    ".config/starship".source = "${HOME}/dotfiles/starship";
-    ".config/zellij".source = "${HOME}/dotfiles/zellij";
-    ".config/nvim".source = "${HOME}/dotfiles/nvim";
-    ".config/nix".source = "${HOME}/dotfiles/nix";
-    ".config/nix-darwin".source = "${HOME}/dotfiles/nix-darwin";
-    ".config/tmux".source = "${HOME}/dotfiles/tmux";
+    ".zshrc".source = "${config.home.homeDirectory}/dotfiles/zshrc/.zshrc";
+    ".config/wezterm".source = "${config.home.homeDirectory}/dotfiles/wezterm";
+    ".config/starship".source = "${config.home.homeDirectory}/dotfiles/starship";
+    ".config/zellij".source = "${config.home.homeDirectory}/dotfiles/zellij";
+    ".config/nvim".source = "${config.home.homeDirectory}/dotfiles/nvim";
+    ".config/nix".source = "${config.home.homeDirectory}/dotfiles/nix";
+    ".config/nix-darwin".source = "${config.home.homeDirectory}/dotfiles/nix-darwin";
+    ".config/tmux".source = "${config.home.homeDirectory}/dotfiles/tmux";
   };
 
   home.sessionVariables = { };
