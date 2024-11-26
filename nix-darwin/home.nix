@@ -7,7 +7,7 @@
   home.username = "gokayyildiz";
   home.homeDirectory = "/Users/gokayyildiz/";
   home.stateVersion = "23.05"; # Please read the comment before changing.
-
+home-manager.backupFileExtension = "backup";
 # Makes sense for user specific applications that shouldn't be available system-wide
   home.packages = [
   ];

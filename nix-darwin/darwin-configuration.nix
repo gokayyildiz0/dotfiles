@@ -14,7 +14,7 @@
 
   # Zsh and other basic programs
   programs.zsh.enable = true;
-  system.stateVersion = "23.05"; # Adjust based on your Nix version
+  system.stateVersion = 5; # Use an integer for state version
 
   # User-specific settings
   users.users.gokayyildiz.home = "/Users/gokayyildiz/";
