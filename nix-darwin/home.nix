@@ -1,24 +1,27 @@
 { config, pkgs, ... }:
 
+
+let
+  dotfiles = builtins.path {
+    path = "/Users/gokayyildiz/dotfiles"; # Absolute path to your dotfiles
+    name = "dotfiles"; # Optional: Gives the path a name
+  };
+in
 {
   home.username = "gokayyildiz";
   home.homeDirectory = "/Users/gokayyildiz/";
-  home.stateVersion = "23.05"; # Please read the comment before changing.
+  home.stateVersion = "23.05";
 
-  # User-specific packages
-  home.packages = [];
-
-  # Manage dotfiles through Home Manager
-   
-    home.file = {
-    ".zshrc".source = "/Users/gokayyildiz/dotfiles/zshrc/.zshrc";
-    ".config/wezterm".source = "/Users/gokayyildiz/dotfiles/wezterm";
-    ".config/starship".source = "/Users/gokayyildiz/dotfiles/starship";
-    ".config/zellij".source = "/Users/gokayyildiz/dotfiles/zellij";
-    ".config/nvim".source = "/Users/gokayyildiz/dotfiles/nvim";
-    ".config/nix".source = "/Users/gokayyildiz/dotfiles/nix";
-    ".config/nix-darwin".source = "/Users/gokayyildiz/dotfiles/nix-darwin";
-    ".config/tmux".source = "/Users/gokayyildiz/dotfiles/tmux";
+  # Home Manager configuration for dotfiles
+  home.file = {
+    ".zshrc".source = "${dotfiles}/zshrc/.zshrc";
+    ".config/wezterm".source = "${dotfiles}/wezterm";
+    ".config/starship".source = "${dotfiles}/starship";
+    ".config/zellij".source = "${dotfiles}/zellij";
+    ".config/nvim".source = "${dotfiles}/nvim";
+    ".config/nix".source = "${dotfiles}/nix";
+    ".config/nix-darwin".source = "${dotfiles}/nix-darwin";
+    ".config/tmux".source = "${dotfiles}/tmux";
   };
   # Add custom session variables
   home.sessionVariables = { };
