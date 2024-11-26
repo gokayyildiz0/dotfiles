@@ -10,17 +10,16 @@
 
   # Manage dotfiles through Home Manager
    
-  home.file = {
-    ".zshrc".source = "${flakePath}/dotfiles/zshrc/.zshrc";
-    ".config/wezterm".source = "${flakePath}/dotfiles/wezterm";
-    ".config/starship".source = "${flakePath}/dotfiles/starship";
-    ".config/zellij".source = "${flakePath}/dotfiles/zellij";
-    ".config/nvim".source = "${flakePath}/dotfiles/nvim";
-    ".config/nix".source = "${flakePath}/dotfiles/nix";
-    ".config/nix-darwin".source = "${flakePath}/dotfiles/nix-darwin";
-    ".config/tmux".source = "${flakePath}/dotfiles/tmux";
+    home.file = {
+    ".zshrc".source = "/Users/gokayyildiz/dotfiles/zshrc/.zshrc";
+    ".config/wezterm".source = "/Users/gokayyildiz/dotfiles/wezterm";
+    ".config/starship".source = "/Users/gokayyildiz/dotfiles/starship";
+    ".config/zellij".source = "/Users/gokayyildiz/dotfiles/zellij";
+    ".config/nvim".source = "/Users/gokayyildiz/dotfiles/nvim";
+    ".config/nix".source = "/Users/gokayyildiz/dotfiles/nix";
+    ".config/nix-darwin".source = "/Users/gokayyildiz/dotfiles/nix-darwin";
+    ".config/tmux".source = "/Users/gokayyildiz/dotfiles/tmux";
   };
-
   # Add custom session variables
   home.sessionVariables = { };
 
