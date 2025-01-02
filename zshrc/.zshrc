@@ -85,6 +85,7 @@ alias vim="nvim"
 
 #Npm
 alias npm="pnpm"
+alias dev="pnpm run dev"
 
 # -----------------
 # Prompt Configuration (Starship)
@@ -134,6 +135,10 @@ if type fzf &>/dev/null; then
   --bind 'ctrl-/:change-preview-window(down|hidden|)'
   --header 'CTRL-/: Toggle preview window position'
   "
+fi
+export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
+if [ -n "$TMUX" ]; then
+  export SSH_AUTH_SOCK=$(tmux show-environment | grep -oP '^SSH_AUTH_SOCK=\K.*')
 fi
 
 # Nix!

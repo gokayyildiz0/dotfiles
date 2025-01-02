@@ -20,5 +20,10 @@ ln -sf "$DOTFILES_DIR/tmux" ~/.config/tmux
 # Symlink nvim config
 ln -sf "$DOTFILES_DIR/nvim" ~/.config/nvim
 
+# Symlinks ghostty config
+ln -sf "$DOTFILES_DIR/ghostty" ~/.config/ghostty
+
+# Symlinks nushell config
+ln -sf "$DOTFILES_DIR/nushell" /Users/gokayyildiz/Library/Application Support/nushell
 
 echo "Symlinks created successfully!"
