@@ -178,3 +178,11 @@ eval "$(zoxide init zsh)"
 # Export Editor
 # -----------------
 export EDITOR=nvimxport EDITOR=nvim
+
+# pnpm
+export PNPM_HOME="/Users/gokayyildiz/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
