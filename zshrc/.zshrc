@@ -186,3 +186,7 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+#löve
+alias love="/Applications/love.app/Contents/MacOS/love"
+#löve end

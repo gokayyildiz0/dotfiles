@@ -129,9 +129,19 @@ return {
 					capabilities = capabilities,
 					settings = {
 						Lua = {
+							runtime = {
+								version = "LuaJIT", -- LÖVE uses LuaJIT
+							},
 							-- make the language server recognize "vim" global
 							diagnostics = {
-								globals = { "vim" },
+								globals = { "vim", "love" },
+							},
+							workspace = {
+								library = {
+									[vim.fn.expand("$HOME/.local/share/love-api")] = true, -- Adjust based on LÖVE API path
+									[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+									[vim.fn.stdpath("config") .. "/lua"] = true,
+								},
 							},
 							completion = {
 								callSnippet = "Replace",
