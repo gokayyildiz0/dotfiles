@@ -124,28 +124,33 @@ return {
 				})
 			end,
 			["lua_ls"] = function()
-				-- configure lua server (with special settings)
-				lspconfig["lua_ls"].setup({
+				lspconfig.lua_ls.setup({
 					capabilities = capabilities,
 					settings = {
 						Lua = {
 							runtime = {
-								version = "LuaJIT", -- LÖVE uses LuaJIT
+								version = "LuaJIT",
+								special = {
+									love = "require",
+								},
 							},
-							-- make the language server recognize "vim" global
 							diagnostics = {
 								globals = { "vim", "love" },
 							},
 							workspace = {
 								library = {
-									[vim.fn.expand("$HOME/.local/share/love-api")] = true, -- Adjust based on LÖVE API path
-									[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-									[vim.fn.stdpath("config") .. "/lua"] = true,
+									vim.fn.expand("$HOME/.local/share/love-api"), -- ✅ LÖVE API
+									vim.fn.expand("$VIMRUNTIME/lua"),
+									vim.fn.stdpath("config") .. "/lua",
 								},
+								checkThirdParty = false,
+								maxPreload = 100000,
+								preloadFileSize = 100000,
 							},
 							completion = {
 								callSnippet = "Replace",
 							},
+							telemetry = { enable = false },
 						},
 					},
 				})

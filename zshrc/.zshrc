@@ -190,3 +190,6 @@ esac
 #löve
 alias love="/Applications/love.app/Contents/MacOS/love"
 #löve end
+
+# Added by Windsurf
+export PATH="/Users/gokayyildiz/.codeium/windsurf/bin:$PATH"
