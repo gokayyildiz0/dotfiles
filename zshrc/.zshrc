@@ -84,8 +84,8 @@ alias vi="nvim"
 alias vim="nvim"
 
 #Npm
-alias npm="pnpm"
-alias dev="pnpm run dev"
+#alias npm="pnpm"
+#alias dev="pnpm run dev"
 
 # -----------------
 # Prompt Configuration (Starship)
