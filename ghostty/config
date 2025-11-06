@@ -5,4 +5,5 @@ clipboard-write = allow
 macos-option-as-alt = left
 theme = TokyoNight
 mouse-hide-while-typing = true
+font-size = 18
 

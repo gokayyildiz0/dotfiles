@@ -85,7 +85,7 @@ alias vim="nvim"
 
 #Npm
 #alias npm="pnpm"
-#alias dev="pnpm run dev"
+alias dev="pnpm run dev"
 
 # -----------------
 # Prompt Configuration (Starship)
@@ -193,3 +193,4 @@ alias love="/Applications/love.app/Contents/MacOS/love"
 
 # Added by Windsurf
 export PATH="/Users/gokayyildiz/.codeium/windsurf/bin:$PATH"
+export PATH="$PATH:/opt/homebrew/Cellar/node/25.1.0/bin"
